@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import "./globals.css"
-import { Analytics } from "@vercel/analytics/next"
 import ClientAppContent from "./ClientAppContent"
 
 export const metadata = {
@@ -53,7 +52,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ClientAppContent />
         {children}
-        <Analytics />
       </body>
     </html>
   )
