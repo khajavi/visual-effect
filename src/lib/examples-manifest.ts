@@ -171,7 +171,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   // Scope
   {
     id: "effect-add-finalizer",
-    name: "Effect.addFinalizer",
+    name: "ZIO.addFinalizer",
     description: "Register cleanup actions in a scope",
     section: "scope",
   },
