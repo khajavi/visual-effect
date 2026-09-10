@@ -67,13 +67,13 @@ export function EffectRepeatSpacedExample({ exampleId, index, metadata }: Exampl
     [baseTask],
   )
 
-  const codeSnippet = `const phone = checkNotifications();
-const checking = Effect.repeat(phone, Schedule.spaced("2 seconds"));`
+  const codeSnippet = `val phone = checkNotifications()
+val checking = phone.repeat(Schedule.spaced(2.seconds))`
 
   const taskHighlightMap = useMemo(
     () => ({
       phone: { text: "checkNotifications()" },
-      checking: { text: 'Effect.repeat(phone, Schedule.spaced("2 seconds"))' },
+      checking: { text: "phone.repeat(Schedule.spaced(2.seconds))" },
     }),
     [],
   )

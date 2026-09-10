@@ -127,7 +127,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   // Schedule
   {
     id: "effect-repeat-spaced",
-    name: "Effect.repeat",
+    name: "ZIO.repeat",
     description: "Repeat an effect with a fixed delay between each execution",
     section: "schedule",
     variant: "spaced",
