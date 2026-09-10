@@ -95,7 +95,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-firstsuccessof",
-    name: "Effect.firstSuccessOf",
+    name: "ZIO.firstSuccessOf",
     description: "Try effects sequentially and return the first successful result",
     section: "error handling",
   },

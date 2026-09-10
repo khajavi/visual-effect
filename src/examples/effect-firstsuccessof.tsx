@@ -54,15 +54,11 @@ export function EffectFirstSuccessOfExample({
   }, [weatherAPI, localSensor, backupService]);
 
   const codeSnippet = `
-const weatherAPI = fetchFromWeatherAPI();
-const localSensor = fetchFromLocalSensor();
-const backupService = fetchFromBackupService();
+val weatherAPI = fetchFromWeatherAPI()
+val localSensor = fetchFromLocalSensor()
+val backupService = fetchFromBackupService()
 
-const result = Effect.firstSuccessOf([
-  weatherAPI,
-  localSensor,
-  backupService
-]);
+val result = ZIO.firstSuccessOf(weatherAPI, List(localSensor, backupService))
   `;
 
   const taskHighlightMap = useMemo(
@@ -70,7 +66,7 @@ const result = Effect.firstSuccessOf([
       weatherAPI: { text: "fetchFromWeatherAPI()" },
       localSensor: { text: "fetchFromLocalSensor()" },
       backupService: { text: "fetchFromBackupService()" },
-      result: { text: "Effect.firstSuccessOf([...])" },
+      result: { text: "ZIO.firstSuccessOf(weatherAPI, List(localSensor, backupService))" },
     }),
     []
   );
