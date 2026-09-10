@@ -12,7 +12,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-fail",
-    name: "Effect.fail",
+    name: "ZIO.fail",
     description: "Create an effect that represents a recoverable error",
     section: "constructors",
   },
