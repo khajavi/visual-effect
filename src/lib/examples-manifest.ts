@@ -134,7 +134,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-repeat-while-output",
-    name: "Effect.repeat",
+    name: "ZIO.repeat",
     variant: "whileOutput",
     description: "Repeat while output matches a condition",
     section: "schedule",

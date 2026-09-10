@@ -49,23 +49,14 @@ export function EffectRepeatWhileOutputExample({
     [baseTask],
   )
 
-  const codeSnippet = `const hotdog = eatHotdog()
-const contest = Effect.repeat(hotdog,
-    Schedule.intersect( 
-      Schedule.spaced("400 millis"),
-      Schedule.whileOutput(
-        Schedule.elapsed, 
-        (elapsed) => Duration.lessThan(elapsed, Duration.seconds(10))
-      )
-    )
-  )
-)`
+  const codeSnippet = `val hotdog = eatHotdog()
+val contest = hotdog.repeat(Schedule.spaced(400.millis) && Schedule.elapsed.whileOutput(_ < 10.seconds))`
 
   const taskHighlightMap = useMemo(
     () => ({
       hotdog: { text: "eatHotdog()" },
       contest: {
-        text: 'Effect.repeat(hotdog, Schedule.intersect(Schedule.spaced("350 millis"), Schedule.whileOutput(Schedule.elapsed, elapsed => Duration.toMillis(elapsed) < 10000)))',
+        text: "hotdog.repeat(Schedule.spaced(400.millis) && Schedule.elapsed.whileOutput(_ < 10.seconds))",
       },
     }),
     [],
