@@ -30,8 +30,8 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-promise",
-    name: "Effect.promise",
-    description: "Create an effect from an asynchronous computation guaranteed to succeed",
+    name: "ZIO.fromFuture",
+    description: "Create an effect from an asynchronous Scala Future",
     section: "constructors",
   },
   {
