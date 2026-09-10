@@ -148,7 +148,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-retry-exponential",
-    name: "Effect.retry",
+    name: "ZIO.retry",
     variant: "exponential",
     description: "Retry with exponential backoff",
     section: "schedule",

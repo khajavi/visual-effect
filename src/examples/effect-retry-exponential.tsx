@@ -49,13 +49,13 @@ export function EffectRetryExponentialExample({
     [baseTask],
   )
 
-  const codeSnippet = `const park = attemptParallelPark();
-const result = Effect.retry(park, Schedule.exponential("700 millis"));`
+  const codeSnippet = `val park = attemptParallelPark()
+val result = park.retry(Schedule.exponential(700.millis))`
 
   const taskHighlightMap = useMemo(
     () => ({
       park: { text: "attemptParallelPark()" },
-      result: { text: 'Effect.retry(park, Schedule.exponential("700 millis"))' },
+      result: { text: "park.retry(Schedule.exponential(700.millis))" },
     }),
     [],
   )
