@@ -50,7 +50,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-race",
-    name: "Effect.race",
+    name: "ZIO.race",
     description: "Race two effects and return the result of the first successful one",
     section: "concurrency",
   },

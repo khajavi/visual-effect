@@ -26,10 +26,10 @@ export function EffectRaceExample({ exampleId, index, metadata }: ExampleCompone
   const tasks = useMemo(() => [tortoise, achilles], [tortoise, achilles])
 
   // Code snippet
-  const codeSnippet = `const tortoise = runFast("tortoise")
-const achilles = runFast("achilles")  
+  const codeSnippet = `val tortoise = runFast("tortoise")
+val achilles = runFast("achilles")
 
-const winner = Effect.race(tortoise, achilles)`
+val winner = tortoise.race(achilles)`
 
   // Mapping between task name and the text to highlight
   const taskHighlightMap = useMemo(
@@ -41,7 +41,7 @@ const winner = Effect.race(tortoise, achilles)`
         text: 'runFast("achilles")',
       },
       winner: {
-        text: "Effect.race(tortoise, achilles)",
+        text: "tortoise.race(achilles)",
       },
     }),
     [],
