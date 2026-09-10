@@ -36,7 +36,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-sleep",
-    name: "Effect.sleep",
+    name: "ZIO.sleep",
     description: "Create an effect that suspends execution for a given duration",
     section: "constructors",
   },
