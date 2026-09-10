@@ -113,7 +113,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-partition",
-    name: "Effect.partition",
+    name: "ZIO.partition",
     description: "Execute effects and partition results into successes and failures",
     section: "error handling",
   },
