@@ -39,13 +39,13 @@ export function EffectTimeoutExample({ exampleId, index, metadata }: ExampleComp
   }, [pizza])
 
   const codeSnippet = `
-const pizza = orderDelivery();
-const result = Effect.timeout(pizza, "1 second");`
+val pizza = orderDelivery()
+val result = pizza.timeout(1.second).someOrFail("TOO SLOW!")`
 
   const taskHighlightMap = useMemo(
     () => ({
       pizza: { text: "orderDelivery()" },
-      result: { text: 'Effect.timeout(pizza, "1 second")' },
+      result: { text: 'pizza.timeout(1.second).someOrFail("TOO SLOW!")' },
     }),
     [],
   )

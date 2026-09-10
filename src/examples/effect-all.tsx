@@ -95,30 +95,21 @@ export function EffectAllExample({ exampleId, index, metadata }: ExampleComponen
 
   // Dynamic code snippet based on concurrency mode
   const getCodeSnippet = () => {
-    const baseCode = `const nyc = readTemperature("New York")
-const berlin = readTemperature("Berlin")
-const tokyo = readTemperature("Tokyo")
-const london = readTemperature("London")
+    const baseCode = `val nyc = readTemperature("New York")
+val berlin = readTemperature("Berlin")
+val tokyo = readTemperature("Tokyo")
+val london = readTemperature("London")
 
-const result = Effect.all([nyc, berlin, tokyo, london]`
+val result = `
 
     switch (concurrencyMode) {
       case "sequential":
-        return `${baseCode})`
+        return `${baseCode}ZIO.collectAll(List(nyc, berlin, tokyo, london))`
       case "unbounded":
-        return (
-          baseCode +
-          `, {
-  concurrency: "unbounded",
-})`
-        )
+        return `${baseCode}ZIO.collectAllPar(List(nyc, berlin, tokyo, london))`
       case "numbered":
-        return (
-          baseCode +
-          `, {
-  concurrency: 2,
-})`
-        )
+        return `${baseCode}ZIO.collectAllPar(List(nyc, berlin, tokyo, london))
+  .withParallelism(2)`
     }
   }
 
@@ -140,10 +131,10 @@ const result = Effect.all([nyc, berlin, tokyo, london]`
       result: {
         text:
           concurrencyMode === "sequential"
-            ? "Effect.all([nyc, berlin, tokyo, london])"
+            ? "ZIO.collectAll(List(nyc, berlin, tokyo, london))"
             : concurrencyMode === "unbounded"
-              ? 'concurrency: "unbounded"'
-              : `concurrency: 2`,
+              ? "ZIO.collectAllPar(List(nyc, berlin, tokyo, london))"
+              : ".withParallelism(2)",
       },
     }),
     [concurrencyMode],

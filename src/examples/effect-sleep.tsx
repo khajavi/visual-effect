@@ -24,15 +24,14 @@ export function EffectSleepExample({ exampleId, index, metadata }: ExampleCompon
   )
 
   // Simplified code snippet without visualization implementation details
-  const codeSnippet = `const sleepEffect = Effect.gen(function* () {
-  yield* Effect.sleep("3 seconds");
-  return "Refreshed!";
-});`
+  const codeSnippet = `val sleepEffect = for {
+  _ <- ZIO.sleep(3.seconds)
+} yield "Refreshed!"`
 
   const taskHighlightMap = useMemo(
     () => ({
       sleep: {
-        text: 'Effect.sleep("3 seconds")',
+        text: "ZIO.sleep(3.seconds)",
       },
     }),
     [],

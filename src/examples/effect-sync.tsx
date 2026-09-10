@@ -12,12 +12,12 @@ export function EffectSyncExample({ exampleId, index, metadata }: ExampleCompone
     Effect.sync(() => Math.random()).pipe(Effect.map(value => new NumberResult(value))),
   )
 
-  const codeSnippet = `const random = Effect.sync(() => Math.random())`
+  const codeSnippet = `val random = ZIO.succeed(Math.random())`
 
   const taskHighlightMap = useMemo(
     () => ({
       random: {
-        text: "Effect.sync(() => Math.random())",
+        text: "ZIO.succeed(Math.random())",
       },
     }),
     [],

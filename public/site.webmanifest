@@ -1,7 +1,7 @@
 {
-  "name": "Visual Effect - Interactive Effect Library Visualizer",
-  "short_name": "Visual Effect",
-  "description": "An interactive visualization tool for the Effect library that demonstrates how Effect operations execute over time with animated visual representations and synchronized sound effects.",
+  "name": "Visual ZIO Effect - Interactive ZIO Library Visualizer",
+  "short_name": "Visual ZIO Effect",
+  "description": "An interactive visualization tool for ZIO that demonstrates how ZIO operations execute over time with animated visual representations and synchronized sound effects.",
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",

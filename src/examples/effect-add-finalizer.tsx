@@ -115,26 +115,27 @@ export function EffectFinalizerExample({ exampleId, index, metadata }: ExampleCo
   // Dynamic code snippet based on outcome
   const codeSnippet = (() => {
     const lines = [
-      "const effect = Effect.gen(function* () {",
-      "  // Register finalizer first",
-      '  yield* Effect.addFinalizer(() => console.log("cleanup"))',
+      "val effect = ZIO.scoped {",
+      "  for {",
+      '    // Register finalizer first',
+      '    _ <- ZIO.addFinalizer(ZIO.succeed(println("cleanup")))',
     ]
 
     switch (outcome) {
       case "succeed":
-        lines.push("  // Succeed", '  return "Done"')
+        lines.push("    // Succeed", '    r <- ZIO.succeed("Done")')
         break
       case "fail":
-        lines.push("  // Fail", '  return yield* Effect.fail("Boom")')
+        lines.push("    // Fail", '    r <- ZIO.fail("Boom")')
         break
       case "die":
-        lines.push("  // Die", '  return yield* Effect.die("Defect")')
+        lines.push("    // Die", '    r <- ZIO.die(new RuntimeException("Defect"))')
         break
       case "interrupt":
-        lines.push("  // Keep running until interrupted", "  yield* Effect.sleep(60 * 60 * 1000)")
+        lines.push("    // Keep running until interrupted", "    r <- ZIO.sleep(1.hour)")
         break
     }
-    lines.push("}).pipe(Effect.scoped)")
+    lines.push("  } yield r", "}")
     return lines.join("\n")
   })()
 

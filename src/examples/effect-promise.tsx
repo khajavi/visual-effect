@@ -10,14 +10,12 @@ export function EffectPromiseExample({ exampleId, index, metadata }: ExampleComp
   // Simulate a weather API call with built-in jittered delay
   const promiseTask = useVisualEffect("london", () => getWeather("London"))
 
-  const codeSnippet = `function readTemperature(location) {
-  return Effect.promise(() =>
-    fetch(\`slow.weather.com/api/\${location}\`)
-     .then(r => r.json())
-  )
-}
+  const codeSnippet = `def readTemperature(location: String): Task[Double] =
+  ZIO.fromFuture { implicit ec =>
+    fetchWeather(s"slow.weather.com/api/\${location}")
+  }
 
-const london = readTemperature("London")
+val london = readTemperature("London")
 `
 
   const taskHighlightMap = useMemo(

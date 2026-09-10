@@ -14,12 +14,12 @@ export function EffectDieExample({ exampleId, index, metadata }: ExampleComponen
 
   const deathState = useVisualEffectState(deathTask)
 
-  const codeSnippet = `const death = Effect.die(new Error("FATAL: System corrupted"))`
+  const codeSnippet = `val death = ZIO.die(new RuntimeException("FATAL: System corrupted"))`
 
   const taskHighlightMap = useMemo(
     () => ({
       death: {
-        text: 'Effect.die(new Error("FATAL: System corrupted"))',
+        text: 'ZIO.die(new RuntimeException("FATAL: System corrupted"))',
       },
     }),
     [],

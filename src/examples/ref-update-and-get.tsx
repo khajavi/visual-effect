@@ -71,28 +71,25 @@ export function EffectRefConcurrentExample({ exampleId, index, metadata }: Examp
     [counterRef, incrementTask1, incrementTask2, incrementTask3, incrementTask4, incrementTask5],
   )
 
-  const codeSnippet = `const increment = (counter: Ref<number>) => Effect.gen(function* () {
-  yield* Effect.sleep(Duration.millis(Math.random() * 1000 + 500))
-  return yield* Ref.updateAndGet(counter, n => n + 1)
-})
+  const codeSnippet = `val increment = (counter: Ref[Int]) => for {
+  _ <- ZIO.sleep((Math.random() * 1000 + 500).toLong.millis)
+  n <- counter.updateAndGet(_ + 1)
+} yield n
 
-const concurrent = Effect.gen(function* () {
-  const counter = yield* Ref.make(0)
-  return yield* Effect.all(
-    Array.from({ length: 5 }, () => increment(counter)),
-    { concurrency: "unbounded" }
-  )
-})`
+val concurrent = for {
+  counter <- Ref.make(0)
+  _       <- ZIO.collectAllPar(List.fill(5)(increment(counter)))
+} yield ()`
 
   const taskHighlightMap = useMemo(
     () => ({
-      increment1: { text: "Ref.updateAndGet(counterRef, n => n + 1)" },
-      increment2: { text: "Ref.updateAndGet(counterRef, n => n + 1)" },
-      increment3: { text: "Ref.updateAndGet(counterRef, n => n + 1)" },
-      increment4: { text: "Ref.updateAndGet(counterRef, n => n + 1)" },
-      increment5: { text: "Ref.updateAndGet(counterRef, n => n + 1)" },
+      increment1: { text: "counter.updateAndGet(_ + 1)" },
+      increment2: { text: "counter.updateAndGet(_ + 1)" },
+      increment3: { text: "counter.updateAndGet(_ + 1)" },
+      increment4: { text: "counter.updateAndGet(_ + 1)" },
+      increment5: { text: "counter.updateAndGet(_ + 1)" },
       concurrent: {
-        text: 'Effect.all([...], { concurrency: "unbounded" })',
+        text: "ZIO.collectAllPar(List.fill(5)(increment(counter)))",
       },
     }),
     [],

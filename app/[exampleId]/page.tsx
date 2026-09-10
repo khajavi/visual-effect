@@ -21,12 +21,12 @@ export async function generateMetadata({
     const meta = getExampleMeta(exampleId)
     if (!meta) {
       return {
-        title: "Example Not Found - Visual Effect",
+        title: "Example Not Found - Visual ZIO Effect",
         description: "The requested example could not be found",
       }
     }
 
-    const title = `${meta.name}${meta.variant ? ` ${meta.variant}` : ""} - Visual Effect`
+    const title = `${meta.name}${meta.variant ? ` ${meta.variant}` : ""} - Visual ZIO Effect`
 
     return {
       title,
@@ -34,8 +34,8 @@ export async function generateMetadata({
       openGraph: {
         title,
         description: meta.description,
-        url: `https://effect.kitlangton.com/${exampleId}`,
-        siteName: "Visual Effect",
+        url: `https://visual-zio-effect.surge.sh/${exampleId}`,
+        siteName: "Visual ZIO Effect",
         images: [
           {
             url: `/og/${exampleId}.png`,
@@ -57,8 +57,8 @@ export async function generateMetadata({
   } catch {
     // Fallback to default metadata
     return {
-      title: "Visual Effect - Interactive Effect Playground",
-      description: "Interactive examples of TypeScript's beautiful Effect library",
+      title: "Visual ZIO Effect - Interactive ZIO Playground",
+      description: "Interactive examples of Scala's beautiful ZIO library",
     }
   }
 }

@@ -65,18 +65,18 @@ export function EffectAllShortCircuitExample({
     return new VisualEffect("result", allOperations)
   }, [balance, credit, payment])
 
-  const codeSnippet = `const balance = readAccountBalance();
-const credit = checkCreditScore();
-const payment = chargeCreditCard();
+  const codeSnippet = `val balance = readAccountBalance()
+val credit = checkCreditScore()
+val payment = chargeCreditCard()
 
-const result = Effect.all([balance, credit, payment]);`
+val result = ZIO.collectAll(List(balance, credit, payment))`
 
   const taskHighlightMap = useMemo(
     () => ({
       balance: { text: "readAccountBalance()" },
       credit: { text: "checkCreditScore()" },
       payment: { text: "chargeCreditCard()" },
-      result: { text: "Effect.all([balance, credit, payment])" },
+      result: { text: "ZIO.collectAll(List(balance, credit, payment))" },
     }),
     [],
   )

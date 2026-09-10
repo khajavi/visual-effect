@@ -53,14 +53,12 @@ export function EffectPartitionLickTestExample({
     return new VisualEffect("result", partitionEffect)
   }, [effects])
 
-  const codeSnippet = `const result = Effect.partition(
-  [iceCream, battery, popsicle, toad, lollipop],
-  performLick
-).pipe(
-  Effect.map(([fails, successes]) =>
-	 \`👹 \${fails.length} 😇 \${successes.length}\`
-	)
-);`
+  const codeSnippet = `val treats = List(iceCream, battery, popsicle, toad, lollipop)
+
+val result = ZIO.partition(treats)(performLick)
+  .map { case (fails, successes) =>
+    s"👹 \${fails.size} 😇 \${successes.size}"
+  }`
 
   const taskHighlightMap = useMemo(
     () => ({
@@ -69,7 +67,7 @@ export function EffectPartitionLickTestExample({
       popsicle: { text: "popsicle" },
       toad: { text: "toad" },
       lollipop: { text: "lollipop" },
-      result: { text: "Effect.partition([...])" },
+      result: { text: "ZIO.partition(treats)(performLick)" },
     }),
     [],
   )

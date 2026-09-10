@@ -63,19 +63,15 @@ export function EffectRetryRecursExample({ exampleId, index, metadata }: Example
     [baseTask],
   )
 
-  const codeSnippet = `const wakeUp = attemptToWakeUp();
-const snoozeSchedule = Schedule.intersect(
-  Schedule.spaced("2 seconds"),
-  Schedule.recurs(4)
-);
-const result = Effect.retry(wakeUp, snoozeSchedule);`
+  const codeSnippet = `val wakeUp = attemptToWakeUp()
+val snoozeSchedule = Schedule.spaced(2.seconds) && Schedule.recurs(4)
+val result = wakeUp.retry(snoozeSchedule)`
 
   const taskHighlightMap = useMemo(
     () => ({
       wakeUp: { text: "attemptToWakeUp()" },
       result: {
-        text: `
-  Effect.retry(wakeUp, snoozeSchedule)`.trim(),
+        text: "wakeUp.retry(snoozeSchedule)",
       },
     }),
     [],

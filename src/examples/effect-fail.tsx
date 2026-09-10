@@ -9,12 +9,12 @@ import type { ExampleComponentProps } from "@/lib/example-types"
 export function EffectFailExample({ exampleId, index, metadata }: ExampleComponentProps) {
   const failTask = useVisualEffect("error", () => Effect.fail(new Error("Kaboom!")))
 
-  const codeSnippet = `const error = Effect.fail("Kaboom!")`
+  const codeSnippet = `val error = ZIO.fail("Kaboom!")`
 
   const taskHighlightMap = useMemo(
     () => ({
       error: {
-        text: 'Effect.fail("Kaboom!")',
+        text: 'ZIO.fail("Kaboom!")',
       },
     }),
     [],
