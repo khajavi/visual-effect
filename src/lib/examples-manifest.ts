@@ -18,7 +18,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-die",
-    name: "Effect.die",
+    name: "ZIO.die",
     description: "Create an effect that terminates with an unrecoverable defect",
     section: "constructors",
   },
