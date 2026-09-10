@@ -141,7 +141,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-retry-recurs",
-    name: "Effect.retry",
+    name: "ZIO.retry",
     description: "Retry an effect a fixed number of times",
     section: "schedule",
     variant: "recurs",
