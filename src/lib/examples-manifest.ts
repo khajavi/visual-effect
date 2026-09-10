@@ -44,7 +44,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   // Concurrency
   {
     id: "effect-all",
-    name: "Effect.all",
+    name: "ZIO.collectAll",
     description: "Combine multiple effects into one, returning results based on input structure",
     section: "concurrency",
   },
