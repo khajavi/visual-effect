@@ -120,7 +120,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-validate",
-    name: "Effect.validate",
+    name: "ZIO.validate",
     description: "Accumulate validation errors instead of short-circuiting",
     section: "error handling",
   },

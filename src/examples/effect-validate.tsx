@@ -152,21 +152,18 @@ export function EffectValidateExample({ exampleId, index, metadata }: ExampleCom
     return visualEffect("result", validateAll)
   }, [length, complexity, vibes])
 
-  const codeSnippet = `const length = checkLength(password);
-const complexity = checkComplexity(password);
-const vibes = checkVibes(password);
+  const codeSnippet = `val length = checkLength(password)
+val complexity = checkComplexity(password)
+val vibes = checkVibes(password)
 
-const result = length.pipe(
-  Effect.validate(complexity),
-  Effect.validate(vibes)
-);`
+val result = length.validate(complexity).validate(vibes)`
 
   const taskHighlightMap = useMemo(
     () => ({
       length: { text: "checkLength(password)" },
       complexity: { text: "checkComplexity(password)" },
       vibes: { text: "checkVibes(password)" },
-      result: { text: "length.pipe(Effect.validate(...))" },
+      result: { text: "length.validate(complexity).validate(vibes)" },
     }),
     [],
   )
