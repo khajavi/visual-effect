@@ -134,28 +134,18 @@ export function EffectAcquireReleaseExample({ exampleId, index, metadata }: Exam
   }, [mainTask, scope])
 
   const codeSnippet = `
-const makeDatabase = Effect.acquireRelease(
-  connectDatabase(),
-  (db) => Effect.sync(() => db.close())
-);
+val makeDatabase = ZIO.acquireRelease(connectDatabase())(db => ZIO.succeed(db.close()))
+val makeCache = ZIO.acquireRelease(connectCache())(cache => ZIO.succeed(cache.flush()))
+val makeLogger = ZIO.acquireRelease(openLogFile())(file => ZIO.succeed(file.close()))
 
-const makeCache = Effect.acquireRelease(
-  connectCache(),
-  (cache) => Effect.sync(() => cache.flush())
-);
-
-const makeLogger = Effect.acquireRelease(
-  openLogFile(),
-  (file) => Effect.sync(() => file.close())
-);
-
-const result = Effect.gen(function* () {
-  const db = yield* makeDatabase
-  const cache = yield* makeCache
-  const logger = yield* makeLogger
-  return yield* doWork(db, cache, logger)
-})
-.pipe(Effect.scoped)`
+val result = ZIO.scoped {
+  for {
+    db     <- makeDatabase
+    cache  <- makeCache
+    logger <- makeLogger
+    r      <- doWork(db, cache, logger)
+  } yield r
+}`
 
   const taskHighlightMap = useMemo(
     () => ({

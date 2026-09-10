@@ -177,7 +177,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-acquire-release",
-    name: "Effect.acquireRelease",
+    name: "ZIO.acquireRelease",
     description: "Acquire resources with guaranteed cleanup",
     section: "scope",
   },
