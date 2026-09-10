@@ -37,16 +37,16 @@ export function EffectForEachExample({ exampleId, index, metadata }: ExampleComp
     return visualEffect("result", forEach)
   }, [locationTasks])
 
-  const codeSnippet = `const locations = ["New York", "London", "Tokyo"];
+  const codeSnippet = `val locations = List("New York", "London", "Tokyo")
 
-const result = Effect.forEach(locations, getWeather);`
+val result = ZIO.foreach(locations)(getWeather)`
 
   const taskHighlightMap = useMemo(
     () => ({
       newYork: { text: "New York" },
       london: { text: "London" },
       tokyo: { text: "Tokyo" },
-      result: { text: "Effect.forEach(locations, getWeather)" },
+      result: { text: "ZIO.foreach(locations)(getWeather)" },
     }),
     [],
   )

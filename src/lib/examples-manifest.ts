@@ -62,7 +62,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-foreach",
-    name: "Effect.forEach",
+    name: "ZIO.foreach",
     description: "Execute an effectful operation for each element in an iterable",
     section: "concurrency",
   },
