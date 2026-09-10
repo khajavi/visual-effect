@@ -51,13 +51,13 @@ export function EffectRetryExample({ exampleId, index, metadata }: ExampleCompon
   }, [swipeCardTask])
 
   const codeSnippet = `
-const swipeCard = swipeCard();
-const result = Effect.eventually(swipeCard);`
+val swipeCard = swipeCard()
+val result = swipeCard.eventually`
 
   const taskHighlightMap = useMemo(
     () => ({
       swipeCard: { text: "swipeCard()" },
-      result: { text: "Effect.eventually(swipeCard)" },
+      result: { text: "swipeCard.eventually" },
     }),
     [],
   )

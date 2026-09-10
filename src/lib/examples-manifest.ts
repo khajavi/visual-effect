@@ -107,7 +107,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-eventually",
-    name: "Effect.eventually",
+    name: "ZIO.eventually",
     description: "Run an effect repeatedly until it succeeds, ignoring errors",
     section: "error handling",
   },
