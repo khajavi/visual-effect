@@ -51,18 +51,18 @@ export function EffectRefExample({ exampleId, index, metadata }: ExampleComponen
   )
 
   const codeSnippet = `
-const increment = (counter: Ref<number>) => 
-  Ref.updateAndGet(counter, n => n + 1)
+val increment = (counter: Ref[Int]) =>
+  counter.updateAndGet(_ + 1)
 
-const repeat = Effect.gen(function* () {
-  const counter = yield* Ref.make(0)
-  yield* Effect.repeat(increment(counter), Schedule.recurs(4))
-})`
+val repeat = for {
+  counter <- Ref.make(0)
+  _       <- increment(counter).repeat(Schedule.recurs(4))
+} yield ()`
 
   const taskHighlightMap = useMemo(
     () => ({
-      increment: { text: "Ref.updateAndGet(counter, n => n + 1)" },
-      repeat: { text: "Effect.repeat(increment, Schedule.recurs(4))" },
+      increment: { text: "counter.updateAndGet(_ + 1)" },
+      repeat: { text: "increment(counter).repeat(Schedule.recurs(4))" },
     }),
     [],
   )
