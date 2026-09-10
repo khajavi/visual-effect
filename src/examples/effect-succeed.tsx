@@ -12,12 +12,12 @@ export function EffectSucceedExample({ exampleId, index, metadata }: ExampleComp
     Effect.succeed(42).pipe(Effect.map(value => new NumberResult(value))),
   )
 
-  const codeSnippet = `const value = Effect.succeed(42)`
+  const codeSnippet = `val value = ZIO.succeed(42)`
 
   const taskHighlightMap = useMemo(
     () => ({
       value: {
-        text: "Effect.succeed(42)",
+        text: "ZIO.succeed(42)",
       },
     }),
     [],

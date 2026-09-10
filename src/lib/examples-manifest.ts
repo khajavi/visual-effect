@@ -6,7 +6,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   // Constructors
   {
     id: "effect-succeed",
-    name: "Effect.succeed",
+    name: "ZIO.succeed",
     description: "Create an effect that always succeeds with a given value",
     section: "constructors",
   },
