@@ -1,11 +1,11 @@
 {
-  "name": "visual-effect",
+  "name": "visual-zio-effect",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "sideEffects": false,
   "license": "MIT",
-  "description": "Interactive visual state machine for Effect (effect-ts) with a Next.js + React demo and Tone.js sound cues.",
+  "description": "Interactive visual state machine for ZIO, adapted from Kit Langton's visual-effect (effect-ts) with a Next.js + React demo and Tone.js sound cues.",
   "repository": {
     "type": "git",
     "url": "https://github.com/kitlangton/visual-effect.git"
@@ -16,6 +16,8 @@
   },
   "author": "Kit Langton",
   "keywords": [
+    "zio",
+    "scala",
     "effect",
     "effect-ts",
     "react",

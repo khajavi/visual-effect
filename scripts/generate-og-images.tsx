@@ -61,7 +61,7 @@ function OGImage({
             letterSpacing: "0.05em",
           }}
         >
-          VISUAL EFFECT
+          VISUAL ZIO EFFECT
         </div>
       </div>
 
@@ -123,8 +123,8 @@ function OGImage({
           borderTop: "1px solid #374151",
         }}
       >
-        <div style={{ color: "#6b7280", fontSize: 20 }}>Interactive Effect Examples</div>
-        <div style={{ color: "#6b7280", fontSize: 20 }}>effect.kitlangton.com</div>
+        <div style={{ color: "#6b7280", fontSize: 20 }}>Interactive ZIO Examples</div>
+        <div style={{ color: "#6b7280", fontSize: 20 }}>visual-zio-effect.surge.sh</div>
       </div>
     </div>
   )

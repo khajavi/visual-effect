@@ -68,7 +68,9 @@ export function PageHeader({ isMuted, onMuteToggle }: HeaderProps) {
         <motion.div style={{ rotate: rotation, opacity }} className="flex items-center">
           <StarFourIcon size={16} weight="fill" />
         </motion.div>
-        <span className="font-bold text-neutral-400 tracking-wide text-base">VISUAL EFFECT</span>
+        <span className="font-bold text-neutral-400 tracking-wide text-base">
+          VISUAL ZIO EFFECT
+        </span>
       </button>
 
       {/* Right side: Sound controls and credit */}

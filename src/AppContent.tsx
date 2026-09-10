@@ -239,7 +239,7 @@ function AppContentInner() {
             </div>
 
             {/* Footer */}
-            <footer className="w-full max-w-screen-md mt-40 mb-12 flex items-center justify-between text-xs sm:text-base">
+            <footer className="w-full max-w-screen-md mt-40 mb-12 flex flex-wrap items-center justify-between gap-y-3 text-xs sm:text-base">
               {/* Left side */}
               <div className="text-neutral-400 font-bold tracking-wide flex items-center gap-1.5 sm:gap-2">
                 EFFECT OR
@@ -250,6 +250,17 @@ function AppContentInner() {
                   className="text-neutral-400 hidden sm:block ml-[3px]"
                 />
               </div>
+
+              {/* Sister project credit */}
+              <a
+                href="https://effect.kitlangton.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-500 hover:text-neutral-300 transition-colors duration-300 tracking-wide text-center"
+              >
+                derived from sister project{" "}
+                <span className="text-neutral-400 font-bold">Visual Effect</span>
+              </a>
 
               {/* Right side */}
               <a
