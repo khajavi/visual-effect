@@ -27,12 +27,12 @@ export function EffectRaceAllExample({ exampleId, index, metadata }: ExampleComp
 
   // Code snippet
   const codeSnippet = `
-const cat = runFast("cat")
-const dog = runFast("dog")  
-const mouse = runFast("mouse")
-const rabbit = runFast("rabbit")
+val cat = runFast("cat")
+val dog = runFast("dog")
+val mouse = runFast("mouse")
+val rabbit = runFast("rabbit")
 
-const winner = Effect.raceAll([cat, dog, mouse, rabbit])`
+val winner = ZIO.raceAll(cat, List(dog, mouse, rabbit))`
 
   // Mapping between task name and the text to highlight
   const taskHighlightMap = useMemo(
@@ -50,7 +50,7 @@ const winner = Effect.raceAll([cat, dog, mouse, rabbit])`
         text: 'runFast("rabbit")',
       },
       winner: {
-        text: "Effect.raceAll([cat, dog, mouse, rabbit])",
+        text: "ZIO.raceAll(cat, List(dog, mouse, rabbit))",
       },
     }),
     [],

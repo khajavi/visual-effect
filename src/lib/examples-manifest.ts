@@ -56,7 +56,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-raceall",
-    name: "Effect.raceAll",
+    name: "ZIO.raceAll",
     description: "Race multiple effects and return the first successful result",
     section: "concurrency",
   },
