@@ -102,7 +102,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-timeout",
-    name: "Effect.timeout",
+    name: "ZIO.timeout",
     description: "Add a time limit to an effect, failing with timeout if exceeded",
     section: "error handling",
   },
