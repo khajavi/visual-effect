@@ -82,7 +82,7 @@ export const examplesManifest: Array<ExampleMeta> = [
   // Error Handling
   {
     id: "effect-all-short-circuit",
-    name: "Effect.all",
+    name: "ZIO.collectAll",
     variant: "short circuit",
     description: "Stop execution on the first error encountered",
     section: "error handling",
