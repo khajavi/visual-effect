@@ -24,7 +24,8 @@ export const examplesManifest: Array<ExampleMeta> = [
   },
   {
     id: "effect-sync",
-    name: "Effect.sync",
+    name: "ZIO.succeed",
+    variant: "side effect",
     description: "Create an effect from a synchronous side-effectful computation",
     section: "constructors",
   },
